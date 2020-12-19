@@ -27,6 +27,8 @@ public class Leitor {
 		
 		/**
 		 * Um BufferedReader é inicializado fora do bloco try / Catch.
+		 * 
+		 * @param conteudoCSV
 		 */
 		BufferedReader conteudoCSV = null;
 		
@@ -66,6 +68,8 @@ public class Leitor {
 				/**
 				 * Aqui a linha anteriormente é cortada com o método split. 
 				 * O parâmetro é o separadorCSV = ";"
+				 * 
+				 * @param linha.split
 				 */
 				String[] dados = linha.split(separadorCSV);
 				
@@ -79,15 +83,17 @@ public class Leitor {
 						+ "Ano de fundação: " + dados[2] + " "
 						+ "Altitude: " + dados[3] + " "
 						+ "Distância de Maceió: " + dados[4] + " "
-						+ "Coordenadas: " + dados[5] + " "
-						+ "Clima: " + dados[6] + " "
-						+ "Temperatura :" + dados[7] + " ");
+						+ "Latitude: " + dados[5] + " "
+						+ "Longitude: " + dados[6] + " "
+						+ "Clima :" + dados[7] + " "
+						+ "Temperatura MÁX: " + dados[8] + " "
+						+ "Temperatura MIN: " + dados[9] + " ");
 			}
 			
 			}catch (FileNotFoundException ex) {
 				System.out.println("Arquivo não encontrado");
 			}catch (ArrayIndexOutOfBoundsException ex) {
-				System.out.println("Index grande");
+				System.out.println("Index grande " +  ex.getMessage());
 			}catch(IOException ex){
 				
 			}finally {
