@@ -16,8 +16,8 @@ public class Leitor {
 	public static void main(String[] args) {
 		
 		/**
-		 * A String arquivoCSV contÈm o caminho raiz do documento. 
-		 * Nesse caso, o documento est· no desktop do meu notebook,
+		 * A String arquivoCSV cont√©m o caminho raiz do documento. 
+		 * Nesse caso, o documento est√° no desktop do meu notebook,
 		 * na pasta Documentos teste.
 		 * 
 		 * @param arquivoCSV
@@ -26,23 +26,21 @@ public class Leitor {
 		String arquivoCSV = ("C:\\Users\\Vitor Barbosa\\Desktop\\Documentos teste\\caracteristicasmuncipais.csv");
 		
 		/**
-		 * Um BufferedReader È inicializado fora do bloco try / Catch.
-		 * 
-		 * @param conteudoCSV
+		 * Um BufferedReader √© inicializado fora do bloco try / Catch.
 		 */
 		BufferedReader conteudoCSV = null;
 		
 		/**
-		 * A String linha È a linha fica inicializada como vazia,
-		 * logo ser· preenchida.
+		 * A String linha √© a linha fica inicializada como vazia,
+		 * logo ser√° preenchida.
 		 */
 		String linha = "";
 		
 		/**
-		 * A String separadorCSV È o indicador utilizado para separar
+		 * A String separadorCSV √© o indicador utilizado para separar
 		 * cada item. No caso desse CSV foi utilizado ";". Recomendo
 		 * abrir o documento com um leitor, bloco de notas mesmo, e verificar
-		 * qual È o indicador que separa os itens.
+		 * qual √© o indicador que separa os itens.
 		 */
 		String separadorCSV = ";";
 		
@@ -52,44 +50,42 @@ public class Leitor {
 		try {
 			
 			/**
-			 * O BufferedReader anteriormente criado È instanciado,
-			 * e j· È passado como par‚metro o FileReader que faz a leitura
-			 * do arquivo. O par‚metro do FileReader È justamente a String que
-			 * contÈm o endereÁo do arquivo. Aqui poderia ter sido passado o endereÁo
-			 * diretamente tambÈm.
+			 * O BufferedReader anteriormente criado √© instanciado,
+			 * e j√° √© passado como par√¢metro o FileReader que faz a leitura
+			 * do arquivo. O par√¢metro do FileReader √© justamente a String que
+			 * cont√©m o endere√ßo do arquivo. Aqui poderia ter sido passado o endere√ßo
+			 * diretamente tamb√©m.
 			 */
 			conteudoCSV = new BufferedReader(new FileReader(arquivoCSV));
 			
 			/**
-			 * Enquanto a prÛxima linha do arquivo n„o for nula.
+			 * Enquanto a pr√≥xima linha do arquivo n√£o for nula.
 			 */
 			while((linha = conteudoCSV.readLine()) != null) {
 				
 				/**
-				 * Aqui a linha anteriormente È cortada com o mÈtodo split. 
-				 * O par‚metro È o separadorCSV = ";"
-				 * 
-				 * @param linha.split
+				 * Aqui a linha anteriormente √© cortada com o m√©todo split. 
+				 * O par√¢metro √© o separadorCSV = ";"
 				 */
 				String[] dados = linha.split(separadorCSV);
 				
 				/**
-				 * Nesse ponto, a impress„o da leitura do documento È formatada.
-				 * Cada coluna do documento possui um nome e È aqui que ela È
-				 * impressa. Cada coluna possui um Ìndice.
+				 * Nesse ponto, a impress√£o da leitura do documento √© formatada.
+				 * Cada coluna do documento possui um nome e √© aqui que ela √©
+				 * impressa. Cada coluna possui um √≠ndice.
 				 */
-				System.out.println("CÛdigo: " + dados[0] + " "
-						+ "MunicÌpio: " + dados[1] + " "
-						+ "Ano de fundaÁ„o: " + dados[2] + " "
+				System.out.println("C√≥digo: " + dados[0] + " "
+						+ "Munic√≠pio: " + dados[1] + " "
+						+ "Ano de funda√ß√£o: " + dados[2] + " "
 						+ "Altitude: " + dados[3] + " "
-						+ "Dist‚ncia de MaceiÛ: " + dados[4] + " "
+						+ "Dist√¢ncia de Macei√≥: " + dados[4] + " "
 						+ "Coordenadas: " + dados[5] + " "
 						+ "Clima: " + dados[6] + " "
 						+ "Temperatura :" + dados[7] + " ");
 			}
 			
 			}catch (FileNotFoundException ex) {
-				System.out.println("Arquivo n„o encontrado");
+				System.out.println("Arquivo n√£o encontrado");
 			}catch (ArrayIndexOutOfBoundsException ex) {
 				System.out.println("Index grande");
 			}catch(IOException ex){
